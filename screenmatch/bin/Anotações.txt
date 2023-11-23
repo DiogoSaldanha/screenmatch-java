@@ -1,0 +1,66 @@
+Super Classe Title: 
+- Criação de atributos básicos das classes filhas (MOvie e Series);
+- Criação de super construtor;
+- Método 'showInfo' para amostrar info das classes filhas;
+- Método 'rate' para adicionar valor de avaliação na variável 'sumRating' e incrementar 'totalRatings';
+- Método 'getAvgRating' para fazer a média entre 'sumRating' e 'totalRatings';
+- Getters e Setters.
+
+Classe Movie:
+- Implementa a interface Classified;
+- Um atributo novo (Director);
+- Constructor (Title);
+- Getter e setter;
+- Override de 'getCLassification' (interface Classified) --> retorna um valor inteiro de 'getAvgRating' dividido por 2.
+- Override de 'toString' --> retorna um SOUT do nome e ano do filme.
+
+
+Classe Series: 
+- 4 novos atributos;
+- Constructor (title);
+- Getters e setters;
+- Override de 'getMinuteDuration' (classe Title) --> retorna tempo total de tempo de uma série;
+- Override de 'toString' --> retorna um sout do nome e ano da serie.
+
+Classe Episodes:
+- Implementa a interface Classified;
+- Tem 4 atributos;
+- Getters e setters;
+- Override de 'getClassification' (interface Classified) --> verifica total de visualizações e retorna uma avaliação com base nisso.
+
+Interface Classified:
+- Método getClassification();
+
+Classe RecomendationFilter:
+- Método 'filter' --> recebe como parâmetro um 'Classified' e verifica a avaliação através de 'getClassification'. Dependendo d valor, retorna um SOUT diferente.
+
+Classe TimeCalculator: 
+- 1 atributo totalTime = 0 ;
+- Getter; 
+- Método 'include' --> Recebe um Title como parâmetro e retorna um SOUT adicionando o valor de 'getMinuteDuration' (Title) para a variável totalTime.
+
+Classe Main:
+- Criação de m1 (Movie): 'showInfo', Mostra média de avaliações com 'getAvgRating';
+- Criação de m2 (Movie): Mostra média de avaliações com 'getAvgRating';
+- Criação de m3 (Movie): Mostra média de avaliações com 'getAvgRating';
+- Criação de s1 (Series): Mostra quanto tempo para maratonar a série com 'getMinuteDuration';
+- Criação de tc1 (TimeCalculator): Utiliza 'include' (TimeCalculator) para adicionar m1, m2 ,s1 e mostra quanto tempo para maratonar os 3 títulos com 'getTotalTime' (TimeCalculator);
+- Criação de e1 (Episodes);
+- Criação de filter (RecomendationFilter): utiliza 'filter' (RecomendationFilter) em m1, m2, e1;
+- Criação de movieList (ArrayList Movie): utiliza '.add' em m1, m2, m3. SOUT em tamanho da lista usando '.size', mostra a lista com 'movieList', mostra especificamente um 'name' de
+ um membro da lista com 'movieList.get().getName' e o 'toString' de um membro específico da lista com 'movieList.get().toString';
+
+Classe MainLists:
+- Instancia m1, m2, m3, s1;
+- Novo titlesList (ArrayList Title) e 'add' m1,m2,m3,s1;
+- ForEach --> para cada 'title' em 'titlesList' mostra o nome do título, e caso 'title' seja uma instância de um 'Movie' mostra a classificação do 'mov';
+- ForEach --> idêntico ao anterior, mas a condição é feita para que apenas os mais bem avaliados tenham a classificação mostrada.
+
+- Novo searchForArtist (ArrayList String) e 'add' nomes de artistas.
+Para ordenar essa lista, chamamos 'Collections.sort()' e vemos que depois dessa
+chamada a lista está ordenada por ordem alfabética.
+- Para ordenar a lista de 'Titles' precisamos de um critério claro para a comparação.
+Precisamos implementar a interface 'Comparable' do java em 'Title'. Para isso funcionar,
+precisamos implementar o método 'compareTo'  na nossa classe que vamos utilizar, nesse caso 'Titles'.
+No 'override', queremos que compare o nome do nosso título atual e compare com 
+o nome do título que pretendemos passar como parâmetro.

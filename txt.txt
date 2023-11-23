@@ -1,0 +1,5 @@
+mudanças no MainSearch
+1 - criar uma classe apenas para conexão e busca do OMDB
+2 - criar classe para gravar no nosso arquivo
+3 - criar classe para transformar os objetos 
+4 - criar classe para captura do usuário
